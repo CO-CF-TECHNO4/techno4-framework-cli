@@ -1,0 +1,6 @@
+create/templates/react/pages
+create/templates/vue/pages
+create/templates/common
+ui/src
+ui/www
+node_modules
