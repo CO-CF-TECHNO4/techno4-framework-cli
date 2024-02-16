@@ -13,29 +13,27 @@ module.exports = (options) => {
 
 # ${name}
 
-## Techno4 CLI Options
+## Techno4 CLI Опції
 
-Techno4 app created with following options:
+Techno4 застосунок згенеровано з наступними опціями:
 
 \`\`\`
 ${JSON.stringify(options, null, 2)}
 \`\`\`
 
-## Install Dependencies
-
-First of all we need to install dependencies, run in terminal
+## Встановіть залежності
 \`\`\`
 npm install
 \`\`\`
 
-## NPM Scripts
+## Доступні наступні NPM скрипти
 
 ${npmScripts.join('\n')}
 
 ${templateIf(bundler, () => `
 ## Vite
 
-There is a [Vite](https://vitejs.dev) bundler setup. It compiles and bundles all "front-end" resources. You should work only with files located in \`/src\` folder. Vite config located in \`vite.config.js\`.
+Проєкт використовує [Vite](https://vitejs.dev) генератор пакунків. Ви маєте працювати лише з файлами з каталогу \`/src\`. Конфігураційний файл Vite знайдете тут: \`vite.config.js\`.
 `)}
 
 ${templateIf(type.indexOf('pwa') >= 0, () => `
@@ -98,19 +96,17 @@ Check out [official cordova-res documentation](https://github.com/ionic-team/cor
 
 ## Documentation & Resources
 
-* [Techno4 Core Documentation](https://techno4.online)
+* [Techno4 Core Documentation](https://techno4.online/надбання/фреймворк)
 ${templateIf(framework === 'vue', () => `
-* [Techno4 Vue Documentation](https://techno4.online)
+* [Techno4 Vue Documentation](https://techno4.online/надбання/фреймворк)
 `)}
 ${templateIf(framework === 'react', () => `
-* [Techno4 React Documentation](https://techno4.online)
+* [Techno4 React Documentation](https://techno4.online/надбання/фреймворк)
 `)}
 ${templateIf(framework === 'svelte', () => `
-* [Techno4 Svelte Documentation](https://techno4.online)
+* [Techno4 Svelte Documentation](https://techno4.online/надбання/фреймворк)
 `)}
-* [Techno4 Icons Reference](https://techno4.online)
-* [Community Forum](https://forum.techno4.online)
-
+* [Techno4 Icons Reference](https://techno4.online/надбання/фреймворк)
 
   `.trim().replace(/[\n]{3,}/, '\n');
 };

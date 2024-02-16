@@ -1,6 +1,6 @@
 {
   "name": "techno4-cli",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Techno4 command line utility (CLI)",
   "main": "index.js",
   "bin": {

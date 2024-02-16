@@ -141,7 +141,7 @@ module.exports = (startPage = '/', port = 3001) => {
   });
 
   app.listen(port, () => {
-    console.log(`${chalk.bold(`\nTechno4 CLI UI is running on http://localhost:${port}`)} ${chalk.gray('(CTRL + C to exit)')}`);
+    console.log(`${chalk.bold(`\nTechno4 CLI UI запущено за адресою http://localhost:${port}`)} ${chalk.gray('(CTRL + C для виходу)')}`);
   });
 
   opn(`http://localhost:${port}${startPage}`);
