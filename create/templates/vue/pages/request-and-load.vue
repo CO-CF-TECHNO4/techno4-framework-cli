@@ -1,6 +1,6 @@
 <template>
   <t4-page>
-    <t4-navbar :title="`${user.firstName} ${user.lastName}`" back-link="Back"></t4-navbar>
+    <t4-navbar title="TECHNO4FRAMEWORK2" back-link="Back"></t4-navbar>
     <t4-block strong>
       {{user.about}}
     </t4-block>

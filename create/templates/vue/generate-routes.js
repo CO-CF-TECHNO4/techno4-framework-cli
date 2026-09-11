@@ -98,13 +98,22 @@ module.exports = (options) => {
           setTimeout(function () {
             // We got user data from request
             var user = {
-              firstName: 'Mykola',
-              lastName: 'Zghurskyi',
-              about: 'Hello, I am creator of TECHNO4 FRAMEWORK2! Hope you like it!',
+              title: 'TECHNO4FRAMEWORK2',
+              firstName: 'CO «CF TECHNO» | БО «БФ ТЕХНО4»',
+              lastName: '',
+              about: 'CO «CF TECHNO» | БО «БФ ТЕХНО4» є автором TECHNO4FRAMEWORK2. Дізнайтесь більше за посиланнями:',
               links: [
                 {
-                  title: 'Techno4 Website',
+                  title: 'Офіційний сайт TECHNO4',
                   url: 'https://techno4.online',
+                },
+                {
+                  title: 'Документація TECHNO4FRAMEWORK2',
+                  url: 'https://techno4.online',
+                },
+                {
+                  title: 'GitHub Репозиторій та Документація',
+                  url: 'https://github.com/CO-CF-TECHNO4/TECHNO4FRAMEWORK2#readme',
                 },
               ]
             };

@@ -6,7 +6,7 @@ const RequestAndLoad = (props) => {
 
   return (
     <Page>
-      <Navbar title={`${user.firstName} ${user.lastName}`} backLink="Back" />
+      <Navbar title="TECHNO4FRAMEWORK2" backLink="Back" />
       <Block strong>
         {user.about}
       </Block>
