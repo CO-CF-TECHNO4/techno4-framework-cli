@@ -34,7 +34,7 @@
   "files": [
     "assets",
     "create",
-    "ui/www",
+    "ui",
     "utils",
     "index.js",
     "README.md",

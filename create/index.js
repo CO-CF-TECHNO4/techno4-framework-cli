@@ -203,7 +203,7 @@ ${chalk.bold(logSymbols.info)} ${chalk.bold('Подальші кроки:')}
   - 📖📖 Шукайте документацію за посиланням ${chalk.bold('https://techno4.online/надбання/фреймворк')}.
   - 📖📖 Читайте ${chalk.bold('README.md')} в файлах проекту для отримання інструкцій.
 
-${chalk.bold('Подобається Techno4? Підтримайте проект: ${chalk.bold("https://techno4.online/реєстратура/зробити-благодійний-внесок")}')}
+${chalk.bold('Подобається Techno4? Підтримайте проект:')} ${chalk.bold('https://techno4.online/реєстратура/зробити-благодійний-внесок')}
     `;
 
   logger.text(finalText);

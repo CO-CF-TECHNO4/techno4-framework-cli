@@ -16,13 +16,13 @@ module.exports = (options) => {
       ${templateIf(customBuild, () => `
       import Techno4, { getDevice } from './techno4-custom.js';
       `, () => `
-      import Techno4, { getDevice } from 'techno4/bundle';
+      import Techno4, { getDevice } from 'techno4';
       `)}
       `, () => `
       ${templateIf(customBuild, () => `
       import Techno4 from './techno4-custom.js';
       `, () => `
-      import Techno4 from 'techno4/bundle';
+      import Techno4 from 'techno4';
       `)}
       `)}
 
@@ -30,7 +30,7 @@ module.exports = (options) => {
       ${templateIf(customBuild, () => `
       import '../css/techno4-custom.less';
       `, () => `
-      import 'techno4/css/bundle';
+      import 'techno4/css';
       `)}
 
       // Import Icons and App Custom Styles

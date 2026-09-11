@@ -9,7 +9,6 @@ const getCurrentProject = require('./utils/get-current-project');
 const getOptions = require('./create/utils/get-options');
 const createApp = require('./create/index');
 const generateAssets = require('./assets/index');
-const server = require('./ui/server');
 const pkg = require('./package.json');
 
 const cwd = process.cwd();
@@ -46,6 +45,7 @@ program
 
     if (options.ui) {
       spinner.start('Launching Techno4 UI server');
+      const server = require('./ui/server');
       server('/create/', options.port);
       spinner.end('Launching Techno4 UI server');
     } else {
@@ -82,6 +82,7 @@ program
 
     if (options.ui) {
       spinner.start('Launching Techno4 UI server');
+      const server = require('./ui/server');
       server('/assets/', options.port);
       spinner.end('Launching Techno4 UI server');
     } else {
