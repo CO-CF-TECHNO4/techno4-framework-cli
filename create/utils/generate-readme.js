@@ -2,7 +2,7 @@ const templateIf = require('./template-if');
 const generateNpmScripts = require('./generate-npm-scripts');
 
 module.exports = (options) => {
-  const { framework, bundler, type, name, cordova, capacitor } = options;
+  const { bundler, type, name, cordova, capacitor } = options;
 
   const npmScripts = generateNpmScripts(options).map((s) => {
     return `* ${s.icon} \`${s.name}\` - ${s.description}`;

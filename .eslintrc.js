@@ -13,5 +13,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'newline-per-chained-call': 'off',
     'max-len': 'off',
+    'global-require': 'off',
+    'import/no-unresolved': 'off',
   },
 };

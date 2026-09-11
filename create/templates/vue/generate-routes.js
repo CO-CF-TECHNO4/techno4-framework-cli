@@ -98,17 +98,13 @@ module.exports = (options) => {
           setTimeout(function () {
             // We got user data from request
             var user = {
-              firstName: 'Vladimir',
-              lastName: 'Kharlampidi',
-              about: 'Hello, i am creator of Techno4! Hope you like it!',
+              firstName: 'Mykola',
+              lastName: 'Zghurskyi',
+              about: 'Hello, I am creator of TECHNO4 FRAMEWORK2! Hope you like it!',
               links: [
                 {
                   title: 'Techno4 Website',
-                  url: 'http://techno4.io',
-                },
-                {
-                  title: 'Techno4 Forum',
-                  url: 'http://forum.techno4.io',
+                  url: 'https://techno4.online',
                 },
               ]
             };

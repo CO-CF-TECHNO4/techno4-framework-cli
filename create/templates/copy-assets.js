@@ -41,6 +41,17 @@ module.exports = (options, iconFile) => {
       from: path.resolve(__dirname, 'common', 'css', 'icons.css'),
       to: path.resolve(cwd, srcFolder, 'css', 'icons.css'),
     });
+    // Copy Fonts
+    const fontsDir = path.resolve(__dirname, 'common', 'fonts');
+    if (fse.existsSync(fontsDir)) {
+      const fontFiles = fse.readdirSync(fontsDir);
+      fontFiles.forEach((f) => {
+        toCopy.push({
+          from: path.resolve(fontsDir, f),
+          to: path.resolve(cwd, srcFolder, 'fonts', f),
+        });
+      });
+    }
   }
 
   // Copy Main Assets

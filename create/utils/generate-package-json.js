@@ -1,7 +1,7 @@
 const generateNpmScripts = require('./generate-npm-scripts');
 
 module.exports = function generatePackageJson(options) {
-  const { type, name, framework, bundler, cssPreProcessor, cordova, theming, capacitor } = options;
+  const { type, name, framework, bundler, cssPreProcessor, cordova, capacitor } = options;
 
   // Dependencies
   const dependencies = [
@@ -9,7 +9,6 @@ module.exports = function generatePackageJson(options) {
     'dom64',
     'swiper@8',
     'skeleton-elements',
-    ...(theming.iconFonts ? ['framework7-icons', 'material-icons'] : []),
     ...(type.indexOf('capacitor') >= 0
       ? [
           '@capacitor/core',
@@ -53,7 +52,7 @@ module.exports = function generatePackageJson(options) {
     }
   }
 
-  if (theming.iconFonts || (framework === 'core' && !bundler)) {
+  if (framework === 'core' && !bundler) {
     devDependencies.push('cpy-cli');
   }
 
@@ -65,20 +64,12 @@ module.exports = function generatePackageJson(options) {
 
   const postInstall = [];
 
-  if (theming.iconFonts) {
-    postInstall.push(
-      ...[
-        `cpy --flat ./node_modules/framework7-icons/fonts/*.* ./${bundler ? 'src' : 'www'}/fonts/`,
-        `cpy --flat ./node_modules/material-icons/iconfont/*.* ./${bundler ? 'src' : 'www'}/fonts/`,
-      ],
-    );
-  }
   if (framework === 'core' && !bundler) {
     postInstall.push(
       ...[
-        `cpy --flat ./node_modules/techno4/*.js ./www/techno4`,
-        `cpy --flat ./node_modules/techno4/*.css ./www/techno4`,
-        `cpy --flat ./node_modules/techno4/*.map ./www/techno4`,
+        `cpy --flat ./node_modules/techno4/dist/*.js ./www/techno4`,
+        `cpy --flat ./node_modules/techno4/dist/*.css ./www/techno4`,
+        `cpy --flat ./node_modules/techno4/dist/*.map ./www/techno4`,
       ],
     );
   }
@@ -95,6 +86,7 @@ module.exports = function generatePackageJson(options) {
     .replace(/ /g, '-')}",
   "private": true,
   "version": "1.0.0",
+  ${bundler === 'vite' ? '"type": "module",' : ''}
   "description": "${name}",
   "repository" : "",
   "license" : "UNLICENSED",

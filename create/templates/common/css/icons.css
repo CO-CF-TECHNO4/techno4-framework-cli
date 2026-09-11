@@ -4,8 +4,9 @@
   font-style: normal;
   font-weight: 400;
   src: local('Material Icons'), local('MaterialIcons-Regular'),
-    url(../fonts/material-icons.woff2) format('woff2'),
-    url(../fonts/material-icons.woff) format('woff');
+    url('../fonts/MaterialIcons-Regular.woff2') format('woff2'),
+    url('../fonts/MaterialIcons-Regular.woff') format('woff'),
+    url('../fonts/MaterialIcons-Regular.ttf') format('truetype');
 }
 .material-icons {
   font-family: 'Material Icons';
@@ -27,14 +28,15 @@
 
 /* Techno4 Icons Font (for iOS theme) */
 @font-face {
-  font-family: 'Techno4 Icons';
+  font-family: 'techno4 Icons';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/Techno4Icons-Regular.woff2') format('woff2'),
-    url('../fonts/Techno4Icons-Regular.woff') format('woff');
+  src: url('../fonts/techno4Icons-Regular.woff2') format('woff2'),
+    url('../fonts/techno4Icons-Regular.woff') format('woff'),
+    url('../fonts/techno4Icons-Regular.ttf') format('truetype');
 }
 .t4-icons {
-  font-family: 'Techno4 Icons';
+  font-family: 'techno4 Icons', 'Techno4 Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 28px;

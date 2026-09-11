@@ -33,15 +33,15 @@ module.exports = (options) => {
     ${templateIf(hasCordova && cordova.platforms.indexOf('electron') >= 0, () => `
     const isElectronWatch = process.env.ELECTRON_WATCH || false;
     `)}
-    const SRC_DIR = path.resolve(__dirname, './src');
-    const PUBLIC_DIR = path.resolve(__dirname, './public');
+    const SRC_DIR = path.resolve(import.meta.dirname, './src');
+    const PUBLIC_DIR = path.resolve(import.meta.dirname, './public');
     ${templateIf(hasCordova, () => `
     const BUILD_DIR = path.resolve(
-      __dirname,
+      import.meta.dirname,
       isCordova ? ${cordovaOutput} : './www',
     );
     `, () => `
-    const BUILD_DIR = path.resolve(__dirname, './www',);
+    const BUILD_DIR = path.resolve(import.meta.dirname, './www');
     `)}
 
     export default {

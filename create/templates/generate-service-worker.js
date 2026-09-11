@@ -16,11 +16,11 @@ module.exports = (options) => {
     self.__WB_MANIFEST = [
       {
         revision: '1',
-        url: 'techno4/techno4-bundle.min.css'
+        url: 'techno4/techno4.bundle.min.css'
       },
       {
         revision: '1',
-        url: 'techno4/techno4-bundle.min.js'
+        url: 'techno4/techno4.bundle.min.js'
       },
       {
         revision: '1',
@@ -53,19 +53,19 @@ module.exports = (options) => {
       // Fonts
       {
         revision: '1',
-        url: 'fonts/Techno4Icons-Regular.woff2'
+        url: 'fonts/techno4Icons-Regular.woff2'
       },
       {
         revision: '1',
-        url: 'fonts/Techno4Icons-Regular.woff'
+        url: 'fonts/techno4Icons-Regular.woff'
       },
       {
         revision: '1',
-        url: 'fonts/material-icons.woff2'
+        url: 'fonts/MaterialIcons-Regular.woff2'
       },
       {
         revision: '1',
-        url: 'fonts/material-icons.woff'
+        url: 'fonts/MaterialIcons-Regular.woff'
       },
       `,
       )}
