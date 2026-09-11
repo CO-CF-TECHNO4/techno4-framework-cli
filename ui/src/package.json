@@ -10,10 +10,10 @@
       "web"
     ],
     "name": "Techno4 CLI",
-    "framework": "vue",
+    "framework": "core",
     "template": "single-view",
     "customColor": false,
-    "bundler": "webpack"
+    "bundler": "vite"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
@@ -31,16 +31,9 @@
   ],
   "dependencies": {
     "dom64": "^0.1.0",
-    "techno4": "^0.1.0",
-    "framework7-icons": "^5.0.5",
-    "techno4-vue": "^0.1.0",
-    "vue": "^3.2.31"
+    "techno4": "^0.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.4",
-    "@babel/preset-env": "^7.16.11",
-    "@vitejs/plugin-vue": "^2.2.0",
-    "@vue/compiler-sfc": "^3.2.31",
     "cross-env": "^6.0.0",
     "less": "^3.10.3",
     "postcss-preset-env": "^6.7.0",

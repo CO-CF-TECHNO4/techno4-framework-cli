@@ -10,9 +10,6 @@ module.exports = function generatePackageJson(options) {
     'swiper@8',
     'skeleton-elements',
     ...(theming.iconFonts ? ['framework7-icons', 'material-icons'] : []),
-    ...(framework === 'vue' ? ['techno4-vue', 'vue@3'] : []),
-    ...(framework === 'react' ? ['techno4-react', 'react', 'react-dom', 'prop-types'] : []),
-    ...(framework === 'svelte' ? ['techno4-svelte', 'svelte'] : []),
     ...(type.indexOf('capacitor') >= 0
       ? [
           '@capacitor/core',
@@ -43,9 +40,6 @@ module.exports = function generatePackageJson(options) {
         ...(cssPreProcessor === 'scss' ? ['sass'] : []),
         ...(type.indexOf('pwa') >= 0 ? ['workbox-cli'] : []),
         ...(framework === 'core' ? ['rollup-plugin-techno4'] : []),
-        ...(framework === 'react' ? ['@vitejs/plugin-react-refresh'] : []),
-        ...(framework === 'svelte' ? ['@sveltejs/vite-plugin-svelte@1'] : []),
-        ...(framework === 'vue' ? ['@vitejs/plugin-vue', '@vue/compiler-sfc'] : []),
       ],
     );
   } else {

@@ -1,6 +1,6 @@
-import HomePage from '../pages/home.vue';
-import CreatePage from '../pages/create.vue';
-import AssetsPage from '../pages/assets.vue';
+import HomePage from '../pages/home.js';
+import CreatePage from '../pages/create.js';
+import AssetsPage from '../pages/assets.js';
 
 const routes = [
   {

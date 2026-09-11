@@ -97,15 +97,6 @@ Check out [official cordova-res documentation](https://github.com/ionic-team/cor
 ## Documentation & Resources
 
 * [Techno4 Core Documentation](https://techno4.online/надбання/фреймворк)
-${templateIf(framework === 'vue', () => `
-* [Techno4 Vue Documentation](https://techno4.online/надбання/фреймворк)
-`)}
-${templateIf(framework === 'react', () => `
-* [Techno4 React Documentation](https://techno4.online/надбання/фреймворк)
-`)}
-${templateIf(framework === 'svelte', () => `
-* [Techno4 Svelte Documentation](https://techno4.online/надбання/фреймворк)
-`)}
 * [Techno4 Icons Reference](https://techno4.online/надбання/фреймворк)
 
   `.trim().replace(/[\n]{3,}/, '\n');

@@ -130,18 +130,6 @@ const questions = [
         name: 'Techno4 Core',
         value: 'core',
       },
-      {
-        name: 'Techno4 з Vue.js',
-        value: 'vue',
-      },
-      {
-        name: 'Techno4 з React',
-        value: 'react',
-      },
-      {
-        name: 'Techno4 з Svelte',
-        value: 'svelte',
-      },
     ],
   },
 

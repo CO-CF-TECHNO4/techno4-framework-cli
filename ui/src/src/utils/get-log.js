@@ -1,7 +1,7 @@
-import { request } from 'techno4';
+import Techno4 from 'techno4';
 
 export default function (self, url) {
-  request.json(url).then(({ data }) => {
+  Techno4.request.json(url).then(({ data }) => {
     if (data.done) {
       self.done = true;
     }
