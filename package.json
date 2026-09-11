@@ -4,8 +4,8 @@
   "description": "Command-line utilities for TECHNO4 FRAMEWORK2",
   "main": "index.js",
   "bin": {
-    "techno4": "./index.js",
-    "t4": "./index.js"
+    "techno4": "index.js",
+    "t4": "index.js"
   },
   "scripts": {
     "release": "node scripts/release.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:CO-CF-TECHNO4/techno4-framework-cli.git"
+    "url": "git+ssh://git@github.com/CO-CF-TECHNO4/techno4-framework-cli.git"
   },
   "keywords": [
     "techno4",
