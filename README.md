@@ -10,7 +10,7 @@
 
 ---
 
-### [🇺🇦 Українська](#-українська) &nbsp;|&nbsp; [🇬🇧 English](#-english)
+### [uk_UA](#uk_ua) &nbsp;|&nbsp; [en_GB](#en_gb)
 
 ---
 
@@ -20,10 +20,10 @@
 
 ---
 
-## 🇺🇦 Українська
+## uk_UA
 
 ### 🎯 Мета проєкту
-> **Вільна ініціатива підтримки сучасних інструментів розробника за підтримки благодійної організації «БЛАГОДІЙНИЙ ФОНД ТЕХНО4» (CO «CF TECHNO4»).**
+> **Вільна ініціатива розвитку сучасних інструментів розробника за підтримки благодійної організації «БЛАГОДІЙНИЙ ФОНД ТЕХНО4» (CO «CF TECHNO4»).**
 
 `techno4-cli` — це офіційна консольна утиліта екосистеми **TECHNO4 FRAMEWORK2**, що забезпечує швидке створення, налаштування та скафолдинг проектів (PWA, Cordova, Electron/Desktop), а також генерацію графічних асетів (іконки, сплеш-скріни).
 
@@ -79,10 +79,10 @@ t4 assets --ui
 
 ---
 
-## 🇬🇧 English
+## en_GB
 
 ### 🎯 Project Mission
-> **A free initiative supporting modern developer tools, supported by the charitable organization "CO «CF TECHNO4»" (благодійна організація «БЛАГОДІЙНИЙ ФОНД ТЕХНО4»).**
+> **A free initiative fostering modern developer tools, supported by the charitable organization "CO «CF TECHNO4»" (благодійна організація «БЛАГОДІЙНИЙ ФОНД ТЕХНО4»).**
 
 `techno4-cli` is the official command-line utility for **TECHNO4 FRAMEWORK2**, designed to scaffold new applications (PWA, Cordova, Electron/Desktop) and generate application assets (icons, splash screens) via terminal prompts or interactive local Web UI.
 
