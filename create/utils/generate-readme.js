@@ -96,8 +96,8 @@ Check out [official cordova-res documentation](https://github.com/ionic-team/cor
 
 ## Documentation & Resources
 
-* [Techno4 Core Documentation](https://techno4.online/надбання/фреймворк)
-* [Techno4 Icons Reference](https://techno4.online/надбання/фреймворк)
+* [Techno4 Core Documentation](https://techno4.online/techno4-framework2)
+* [Techno4 Icons Reference](https://techno4.online/techno4-framework2/icons)
 
   `.trim().replace(/[\n]{3,}/, '\n');
 };
