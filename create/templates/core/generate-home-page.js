@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const indent = require('../../utils/indent');
 
 module.exports = (options) => {
@@ -5,6 +7,10 @@ module.exports = (options) => {
     name,
     template,
   } = options;
+
+  if (template === 'audio-studio') {
+    return fs.readFileSync(path.resolve(__dirname, 'pages', 'audio-workshop.html'), 'utf8');
+  }
 
   const isBlank = template === 'blank';
 

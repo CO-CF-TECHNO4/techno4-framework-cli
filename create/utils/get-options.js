@@ -155,6 +155,10 @@ const questions = [
         name: 'Двопанельний перегляд (Split Panel)',
         value: 'split-view',
       },
+      {
+        name: 'Аудіо та Threads Студія (Audio Workshop, MIDI/Serial, Threads Studio)',
+        value: 'audio-studio',
+      },
     ],
   },
 

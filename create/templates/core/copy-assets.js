@@ -13,9 +13,10 @@ module.exports = (options) => {
 
   // Copy Pages
   const pages = [
-    ...(template !== 'blank' ? ['404', 'about', 'dynamic-route', 'form', 'request-and-load'] : []),
+    ...(template !== 'blank' && template !== 'audio-studio' ? ['404', 'about', 'dynamic-route', 'form', 'request-and-load'] : []),
     ...(template === 'tabs' ? ['catalog', 'product', 'settings'] : []),
     ...(template === 'split-view' ? ['left-page-1', 'left-page-2'] : []),
+    ...(template === 'audio-studio' ? ['audio-workshop', 'hardware', 'threads', 'about', '404'] : []),
   ];
 
   pages.forEach((p) => {
@@ -43,13 +44,15 @@ module.exports = (options) => {
   });
 
   if (bundler) {
-    toCopy.push({
-      content: `<template>\n${indent(
-        2,
-        generateHomePage(options).trim(),
-      )}\n</template>\n<script>\nexport default () => {\n  return $render;\n}\n</script>`,
-      to: path.resolve(cwd, srcFolder, 'pages', 'home.t4'),
-    });
+    if (template !== 'audio-studio') {
+      toCopy.push({
+        content: `<template>\n${indent(
+          2,
+          generateHomePage(options).trim(),
+        )}\n</template>\n<script>\nexport default () => {\n  return $render;\n}\n</script>`,
+        to: path.resolve(cwd, srcFolder, 'pages', 'home.t4'),
+      });
+    }
     toCopy.push({
       content: generateRoot(options),
       to: path.resolve(cwd, srcFolder, 'app.t4'),

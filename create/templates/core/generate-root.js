@@ -151,6 +151,52 @@ module.exports = (options) => {
     </div>
     `);
   }
+  // prettier-ignore
+  if (template === 'audio-studio') {
+    views = indent(4, `
+    <!-- Views/Tabs container -->
+    <div class="views tabs safe-areas">
+      <!-- Tabbar for switching views-tabs -->
+      <div class="toolbar toolbar-bottom tabbar-labels">
+        <div class="toolbar-inner">
+          <a href="#view-audio" class="tab-link tab-link-active">
+            <i class="icon t4-icons">waveform_path</i>
+            <span class="tabbar-label">Audio Workshop</span>
+          </a>
+          <a href="#view-hardware" class="tab-link">
+            <i class="icon t4-icons">cpu</i>
+            <span class="tabbar-label">MIDI &amp; Serial</span>
+          </a>
+          <a href="#view-threads" class="tab-link">
+            <i class="icon t4-icons">arrow_branch</i>
+            <span class="tabbar-label">Threads Studio</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab 1: Audio Workshop (Main View) -->
+      ${templateIf(bundler === 'vite', () => `
+      <div id="view-audio" class="view view-main view-init tab tab-active" data-name="audio" data-url="/">
+        <!-- Audio Workshop loaded dynamically from / route -->
+      </div>
+      `, () => `
+      <div id="view-audio" class="view view-main view-init tab tab-active" data-name="audio">
+        ${indent(8, generateHomePage(options)).trim()}
+      </div>
+      `)}
+
+      <!-- Tab 2: MIDI & Serial Hardware View -->
+      <div id="view-hardware" class="view view-init tab" data-name="hardware" data-url="/hardware/">
+        <!-- Hardware loaded dynamically from /hardware/ route -->
+      </div>
+
+      <!-- Tab 3: Threads Studio View -->
+      <div id="view-threads" class="view view-init tab" data-name="threads" data-url="/threads/">
+        <!-- Threads Studio loaded dynamically from /threads/ route -->
+      </div>
+    </div>
+    `);
+  }
 
   // prettier-ignore
   const htmlTemplate = template === 'blank' ? `

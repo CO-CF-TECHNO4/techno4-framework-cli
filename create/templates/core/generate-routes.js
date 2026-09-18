@@ -30,7 +30,13 @@ module.exports = (options) => {
     }
   } else if (bundler === 'vite') {
     routes = indent(0, `
+      ${templateIf(template !== 'audio-studio', () => `
       import HomePage from '../pages/home.t4';
+      `, () => `
+      import AudioWorkshopPage from '../pages/audio-workshop.t4';
+      import HardwarePage from '../pages/hardware.t4';
+      import ThreadsPage from '../pages/threads.t4';
+      `)}
       import AboutPage from '../pages/about.t4';
       import FormPage from '../pages/form.t4';
       ${templateIf(template === 'tabs', () => `
@@ -42,17 +48,32 @@ module.exports = (options) => {
       import LeftPage1 from '../pages/left-page-1.t4';
       import LeftPage2 from '../pages/left-page-2.t4';
       `)}
-      ${templateIf(template !== 'blank', () => `
+      ${templateIf(template !== 'blank' && template !== 'audio-studio', () => `
       import DynamicRoutePage from '../pages/dynamic-route.t4';
       import RequestAndLoad from '../pages/request-and-load.t4';
-      import NotFoundPage from '../pages/404.t4';
       `)}
+      import NotFoundPage from '../pages/404.t4';
 
       var routes = [
+        ${templateIf(template !== 'audio-studio', () => `
         {
           path: '/',
           component: HomePage,
         },
+        `, () => `
+        {
+          path: '/',
+          component: AudioWorkshopPage,
+        },
+        {
+          path: '/hardware/',
+          component: HardwarePage,
+        },
+        {
+          path: '/threads/',
+          component: ThreadsPage,
+        },
+        `)}
         {
           path: '/about/',
           component: AboutPage,
@@ -184,6 +205,16 @@ module.exports = (options) => {
         {
           path: '/left-page-2/',
           url: './pages/left-page-2.html',
+        },
+        `)}
+        ${templateIf(template === 'audio-studio', () => `
+        {
+          path: '/hardware/',
+          componentUrl: './pages/hardware.html',
+        },
+        {
+          path: '/threads/',
+          componentUrl: './pages/threads.html',
         },
         `)}
         {

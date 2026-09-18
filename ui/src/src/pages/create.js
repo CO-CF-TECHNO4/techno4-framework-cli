@@ -716,6 +716,7 @@ export default (props, { $, $t4, $update, $onMounted, $el, $h }) => {
                   { id: 'single-view', icon: '../assets/t-single-view.svg', label: 'Single View' },
                   { id: 'tabs', icon: '../assets/t-tabs.svg', label: 'Tabbed Views (Tabs)' },
                   { id: 'split-view', icon: '../assets/t-split-view.svg', label: 'Split View (Split Panel)' },
+                  { id: 'audio-studio', icon: '../assets/t-tabs.svg', label: 'Audio & Threads Studio' },
                 ].map((tpl) => $h`
                   <div class="col-50 medium-25 checkbox-col checkbox-template-col ${template === tpl.id ? 'checked' : ''}">
                     <div class="col-icon" @click="${() => { template = tpl.id; $update(); }}">
