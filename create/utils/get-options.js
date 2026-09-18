@@ -270,6 +270,7 @@ module.exports = function getOptions() {
       options.cordova = {
         folder: 'cordova',
         platforms: options.cordovaPlatforms,
+        plugins: [],
       };
       if (
         options.cordovaPlatforms.indexOf('ios') >= 0 ||

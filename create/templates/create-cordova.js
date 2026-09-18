@@ -30,7 +30,7 @@ module.exports = (options) => {
       fse.writeFileSync(path.resolve(cwd, cordova.folder, f), contents.replace(/XXXXXX/g, name));
     });
     // Install plugins
-    const plugins = cordova.plugins; // eslint-disable-line
+    const plugins = cordova.plugins || []; // eslint-disable-line
 
     // Install cordova plugins
     if (plugins.length) {

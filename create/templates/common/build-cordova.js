@@ -1,28 +1,37 @@
-const rollup = require('rollup');
-const fs = require('fs');
-const path = require('path');
+import { rollup } from 'rollup';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const build = async () => {
   // rebuild JS without modules
+  const assetsDir = path.resolve(__dirname, '../cordova/www/assets');
   let entry = fs
-    .readdirSync(path.resolve(__dirname, '../cordova/www/assets'))
-    .filter((f) => f.includes('index-') && f.includes('.js'))[0];
+    .readdirSync(assetsDir)
+    .filter((f) => f.startsWith('index-') && f.endsWith('.js'))[0];
+  if (!entry) {
+    console.error('No index-*.js found in', assetsDir);
+    process.exit(1);
+  }
   const hash = entry.split('index-')[1].split('.js')[0];
 
-  const bundle = await rollup.rollup({
-    input: path.resolve(__dirname, '../cordova/www/assets/', entry),
+  const bundle = await rollup({
+    input: path.resolve(assetsDir, entry),
   });
   await bundle.write({
-    file: path.resolve(__dirname, '../cordova/www/assets/', `index-${hash}.js`),
+    file: path.resolve(assetsDir, `index-${hash}.js`),
     format: 'iife',
     name: 'MyApp',
     sourcemap: false,
   });
 
   // Remove old chunk files
-  fs.readdirSync(path.resolve(__dirname, '../cordova/www/assets')).forEach((f) => {
-    if (f.includes('.js') && f.split('.').length > 2 && f !== `index-${hash}.js`) {
-      fs.rmSync(path.resolve(__dirname, '../cordova/www/assets', f));
+  fs.readdirSync(assetsDir).forEach((f) => {
+    if (f.endsWith('.js') && f.split('.').length > 2 && f !== `index-${hash}.js`) {
+      fs.rmSync(path.resolve(assetsDir, f));
     }
   });
 
@@ -40,6 +49,10 @@ const build = async () => {
     })
     .join('\n');
   fs.writeFileSync(indexPath, indexContent);
+  console.log('Cordova post-build completed successfully.');
 };
 
-build();
+build().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
